@@ -30,3 +30,8 @@ Things you may want to cover:
 $ git checkout <commit sha1>
 $ git checkout <branch name>~1 // 1 == first commit
 ```
+* 'rails generate scaffold' commands hang when trying to create a model. How to fix?
+To reset the binstubs, just delete your bin/ directory in rails app and run:
+```
+$ rake app:update:bin
+```
