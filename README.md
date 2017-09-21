@@ -23,3 +23,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * Run Application: rails s
+
+* How to checkout a specific branch and specific commit
+
+```
+$ git checkout <commit sha1>
+$ git checkout <branch name>~1 // 1 == first commit
+```
