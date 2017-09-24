@@ -4,34 +4,43 @@ This README would normally document whatever steps are necessary to get the appl
 
 Things you may want to cover:
 
-* Ruby version 2.4.1
+## Ruby version
 
-* Rails version 5.1.4
+> 2.4.1
 
-* System dependencies
+## Rails version
 
-* Configuration
+> 5.1.4
 
-* Database creation
+## System dependencies
 
-* Database initialization
+## Configuration
 
-* How to run the test suite
+## Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database initialization
 
-* Deployment instructions
+## How to run the test suite
 
-* Run Application: rails s
+## Services (job queues, cache servers, search engines, etc.)
 
-* How to checkout a specific branch and specific commit
+## Deployment instructions
+
+## Run Application
+```
+$ rails s
+```
+
+## How to checkout a specific branch and specific commit
 
 ```
 $ git checkout <commit sha1>
 $ git checkout <branch name>~1 // 1 == first commit
 ```
 * 'rails generate scaffold' commands hang when trying to create a model. How to fix?
-To reset the binstubs, just delete your bin/ directory in rails app and run:
+
+> To reset the binstubs, just delete your bin/ directory in rails app and run:
+
 ```
 $ rake app:update:bin
 ```
