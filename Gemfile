@@ -10,7 +10,10 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use Carrierwave to upload files in Rails App
 gem 'carrierwave'
+# Use MiniMagick to create thumbnail
+gem 'mini_magick', '3.8.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
