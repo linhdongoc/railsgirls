@@ -51,3 +51,9 @@ $ git checkout <branch name>~1 // 1 == first commit
 ```
 $ rake app:update:bin
 ```
+
+### Adding Gravatar to your App
+
+> You need to have an e-mail address registered with Gravatar for this work.
+
+> After setup Gravatar in your app, you need to signup with an e-mail address that is associated with a Gravatar.
