@@ -28,6 +28,18 @@ $ rake db:reset
 
 ## How to run the test suite
 
+> Run all RSpec tests
+
+```
+$ bundle exec rspec
+``
+
+> Run single RSpec test
+
+```
+$ rspec spec/models/idea_spec.rb
+```
+
 ## Services (job queues, cache servers, search engines, etc.)
 
 ## Deployment instructions
