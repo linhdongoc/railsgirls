@@ -54,6 +54,13 @@ $ rspec spec/models/idea_spec.rb
 
 > Follow this description [Detected sqlite3 gem which is not supported on Heroku](https://devcenter.heroku.com/articles/sqlite3)
 
+> Heroku only deploys code that is pushed to the `master` branch of your `heroku` remote.
+If you want to deploy code to Heroku from a non-`master` branch of your local repository, use the following syntax to ensure it is pushed to the remote's `master` branch
+
+```
+$ git push heroku <branch_name>:master
+```
+
 ## Run Application
 ```
 $ rails s
