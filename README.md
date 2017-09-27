@@ -24,6 +24,18 @@ Things you may want to cover:
 $ rake db:reset
 ```
 
+> Run Migration on Heroku
+
+```
+$ heroku run rails db:migrate
+```
+
+> By falling Migration because of networks/firewall 'ECONNREFUSED: connect ECONNREFUSED 50.19.103.36:5000', just:
+
+* Check Port Block, run: `$ telnet rendezvous.heroku.com 5000 `
+* and run `$ heroku run:detached rake db:migrate` [see more](http://www.mmartinez.org/3-methods-to-work-with-heroku-in-networks-with-blocked-ports/)
+
+
 ## Database initialization
 
 > How to [Set up Postgres on Mac](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-mac)
@@ -60,6 +72,8 @@ If you want to deploy code to Heroku from a non-`master` branch of your local re
 ```
 $ git push heroku <branch_name>:master
 ```
+
+> To Stop Heroku, run `$ heroku ps:scale web=0` [see more about dynos cli](https://devcenter.heroku.com/articles/dynos#cli-commands-for-dyno-management)
 
 ## Run Application
 ```
