@@ -26,13 +26,19 @@ $ rake db:reset
 
 ## Database initialization
 
+> How to [Set up Postgres on Mac](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-mac)
+
+> Run postgres: ` $ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start `
+
+> Stop postgres: ` $ pg_ctl -D /usr/local/var/postgres stop -s -m fast `
+
 ## How to run the test suite
 
 > Run all RSpec tests
 
 ```
 $ bundle exec rspec
-``
+```
 
 > Run single RSpec test
 
@@ -43,6 +49,10 @@ $ rspec spec/models/idea_spec.rb
 ## Services (job queues, cache servers, search engines, etc.)
 
 ## Deployment instructions
+
+> Deploy on Heroku using Ruby version 2.3.4 and Postgres as database
+
+> Follow this description [Detected sqlite3 gem which is not supported on Heroku](https://devcenter.heroku.com/articles/sqlite3)
 
 ## Run Application
 ```
