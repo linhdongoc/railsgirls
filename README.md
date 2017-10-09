@@ -32,7 +32,7 @@ $ rake db:reset
 
 ```
 $ bundle exec rspec
-``
+```
 
 > Run single RSpec test
 
