@@ -29,8 +29,6 @@ jobs:
     working_directory: ~/railsgirls
 
     branches:
-      ignore:
-        - master
       only:
         - feature/online-application
 
