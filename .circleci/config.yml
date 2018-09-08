@@ -30,7 +30,9 @@ jobs:
 
     branches:
       only:
-        - feature/online-application
+        - /feature-.*/
+      ignore:
+        - master
 
     steps:
       - checkout
