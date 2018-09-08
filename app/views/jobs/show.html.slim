@@ -1,0 +1,10 @@
+.grid-container
+  .grid-x
+    .cell.small-12
+      h3= @job.title
+
+    .cell.small-12
+      = @job.description.html_safe
+
+    .cell.small-12.text-center
+      .button.hollow= link_to 'zum Bewerbungsformular', new_applicant_path(params.merge(:job_id => @job.id).permit(:job_id))
