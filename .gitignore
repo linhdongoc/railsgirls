@@ -21,3 +21,6 @@
 .byebug_history
 /.idea
 /.ruby-gemset
+
+# Ingnore Sample files
+/db/*.sample
