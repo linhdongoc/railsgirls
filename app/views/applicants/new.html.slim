@@ -1,0 +1,21 @@
+.grid-container
+  .grid-x
+    .cell.small-12
+      h4= @job.title
+      b Wir wollen es Dir leichter machen!
+      p Um den Eingabe-Aufwand für Dich so gering wie möglich zu halten, kannst du den Button "CV-Upload" nutzen.
+        Dabei ordnet unsere automatische Erkennung Deine Daten während des Hochladens gleich den richtigen Formularfeldern zu.
+        Die mit * markierten Felder sind Pflichtfelder.
+
+      p Immer noch zu aufwendig bzw. gerade unterwegs und Deinen Lebenslauf nicht zur Hand? Nutze einfach Dein Xing-Profil
+        und generiere so Deinen Lebenslauf mit dem Button "Mit XING-Profil bewerben" als Anhang.
+
+      p Wir freuen uns auf Deine Bewerbung!
+
+    .cell.small-12
+      .button.hollow= link_to 'CV-Upload', root_path
+    .cell.small-12
+      .button.hollow= link_to 'Mit XING-Profil bewerben', root_path
+  hr
+    .cell.small-12
+      = render 'form', applicant: @applicant

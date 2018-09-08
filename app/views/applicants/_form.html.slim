@@ -1,0 +1,89 @@
+= form_with(model: applicant, local: true) do |form|
+  - if applicant.errors.any?
+    .grid-x
+      .cell.small-12#error_explanation
+        h2 #{pluralize(applicant.errors.count, "error")} prohibited this idea from being saved:
+
+        ul
+          - applicant.errors.full_messages.each do |message|
+            li= message
+  h5 Stammdaten
+  .grid-x.grid-margin-x
+    .cell.small-6.field
+      = form.label :salutation
+      = form.text_field :salutation, id: :applicant_salutation
+
+    .cell.small-6.field
+      = form.label :firstname
+      = form.text_field :firstname, id: :applicant_firstname
+
+    .cell.small-6.field
+      = form.label :lastname
+      = form.text_field :lastname, id: :applicant_lastname
+
+    .cell.small-6.field
+      = form.label :street
+      = form.text_field :street, id: :applicant_street
+
+    .cell.small-6.field
+      = form.label :postcode
+      = form.text_field :postcode, id: :applicant_postcode
+
+    .cell.small-6.field
+      = form.label :place
+      = form.text_field :place, id: :applicant_place
+
+    .cell.small-6.field
+      = form.label :birthday
+      = form.text_field :birthday, id: :applicant_birthday
+
+    .cell.small-6.field
+      = form.label :phone
+      = form.text_field :phone, id: :applicant_phone
+
+    .cell.small-6.field
+      = form.label :email
+      = form.text_field :email, id: :applicant_email
+
+    .cell.small-6
+      = form.hidden_field :job_id, id: :portfolio_job_id, value: @job.id
+
+  hr
+  h5 Rahmendaten
+  .grid-x.grid-margin-x
+    .cell.small-6.field
+      = form.label :earliest_entry
+      = form.text_field :earliest_entry, id: :portfolio_earliest_entry
+
+    .cell.small-6.field
+      = form.label :salary_expectations
+      = form.text_field :salary_expectations, id: :portfolio_salary_expectations
+
+  hr
+  h5 Anlagen
+  .grid-x.grid-margin-x
+    .cell.small-12
+      p Du kannst hier entweder ein gesamtes Bewerbungs-Dokument oder einzelne Dokumente hochladen.
+        Folgende Dateiformate sind möglich: Word(doc, docx), PDF, JPG, PNG, GIF.
+        Ein Einzeldokument darf die Größe von 15 MB nicht überschreiten. Bitte laden keine PDF-
+        und Word-Dokumente hoch, die mit einem Passwort- oder Schreibschutz versehen sind.
+
+    .cell.small-6.field
+      = form.label :foto
+      = form.file_field :foto, id: :portfolio_foto
+
+    .cell.small-6.field
+      = form.label :cover_letter
+      = form.file_field :cover_letter, id: :portfolio_cover_letter
+
+    .cell.small-6.field
+      = form.label :cv
+      = form.file_field :cv, id: :portfolio_cv
+
+    .cell.small-6.field
+      = form.label :certificates
+      = form.file_field :certificates, id: :portfolio_certificates, multiple: true
+
+  .grid-x
+    .cell.actions
+      = form.submit
