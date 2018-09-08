@@ -29,10 +29,10 @@ jobs:
     working_directory: ~/railsgirls
 
     branches:
-      only:
-        - /feature-.*/
       ignore:
         - master
+      only:
+        - feature/online-application
 
     steps:
       - checkout
