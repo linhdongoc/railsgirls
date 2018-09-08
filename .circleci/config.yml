@@ -29,6 +29,9 @@ jobs:
     working_directory: ~/railsgirls
 
     branches:
+      ignore:
+        - master
+        - put-your-app-online-with-heroku
       only:
         - feature/online-application
 
