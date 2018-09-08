@@ -28,6 +28,10 @@ jobs:
 
     working_directory: ~/railsgirls
 
+    branches:
+      only:
+        - feature/online-application
+
     steps:
       - checkout
 
