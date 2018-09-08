@@ -1,0 +1,21 @@
+.grid-container
+  .grid-x.grid-margin-x
+    .cell.small-4
+      ul.menu
+        li= link_to 'Ideas', ideas_path
+        li= link_to 'Jobs', jobs_path
+        li= link_to 'Comments', comments_path
+    .cell.small-4
+      = link_to root_path do
+        = image_tag 'logos/rgsoc-logo_red-transparent-background.png', class: 'main-logo', title: 'Rails Girls', alt: 'Rails Girls'
+    .cell.small-4
+      - if user_signed_in?
+        = link_to current_user.email, edit_user_registration_path
+        |&nbsp
+        = link_to destroy_user_session_path, method: :delete do
+          = image_tag 'icons/logout.svg'
+      - else
+        = link_to 'Sign up', new_user_registration_path
+        = link_to 'Login', new_user_session_path
+
+hr

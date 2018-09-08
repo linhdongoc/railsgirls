@@ -1,0 +1,8 @@
+.grid-x.grid-margin-x
+  - @jobs.each do |job|
+    .cell.small-12.medium-6.large-4
+      = link_to job do
+        .card
+          = image_tag 'logos/flaconi_logo.png'
+          .card-section
+            p= job.title

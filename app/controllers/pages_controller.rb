@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
-  def info
+  def index
+    @jobs = Job.all
   end
 end
