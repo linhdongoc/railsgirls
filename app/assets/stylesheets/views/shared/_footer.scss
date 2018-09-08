@@ -1,0 +1,37 @@
+.footer {
+  background-color: #333;
+  padding-top: $global-padding;
+  padding-bottom: $global-padding;
+
+  .copyright,
+  a {
+    color: #fff;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: $global-margin * 2;
+    font-weight: bold;
+  }
+
+  .copyright {
+    font-size: rem-calc(14);
+  }
+
+  @include breakpoint(small only) {
+    ul {
+      margin-left: 0;
+    }
+
+    .copyright,
+    li {
+      display: block;
+      text-align: left;
+    }
+
+    .main,
+    .copyright {
+      padding-left: $global-padding * 2;
+    }
+  }
+}
