@@ -4,3 +4,32 @@
   margin-bottom: 1rem / 2;
   margin-top: 1rem / 2;
 }
+
+.button.menu-icon {
+  border: none;
+  background-color: $black;
+}
+
+.off-canvas-wrapper {
+  .position-top.is-open {
+    height: 100%;
+    background-color: rgba($black, .7);
+  }
+
+  .close-button {
+    color: $white;
+  }
+
+  .menu.vertical {
+    margin-top: 50px;
+
+    a {
+      color: $white;
+      font-weight: bold;
+    }
+  }
+}
+
+hr {
+  margin-top: 0;
+}
