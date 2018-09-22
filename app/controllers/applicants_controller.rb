@@ -3,21 +3,20 @@ class ApplicantsController < ApplicationController
 
   def new
     @applicant = Applicant.new
-    @portfolio = Portfolio.new
     @job = Job.find(params[:job_id])
   end
 
   def create
     @applicant = Applicant.new(applicant_params)
-    @portfolio = Portfolio.new(portfolio_params)
+    @job = Job.find(@_params['applicant']['portfolio']['job_id'])
 
     respond_to do |format|
-      if @comment.save
+      if @applicant.save
         format.html { redirect_to @applicant, notice: 'Applicant was successfully created.' }
         format.json { render :show, status: :created, location: @applicant }
       else
-        format.html { render :new }
-        format.json { render json: @applicant.errors, json: @portfolio.errors, status: :unprocessable_entity }
+        format.html { render :new, params: @job}
+        format.json { render json: @applicant.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -31,10 +30,22 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.require(:applicant).permit(:salutation, :firstname, :lastname, :street, :postcode, :place, :birthday, :phone, :email)
-  end
-
-  def portfolio_params
-    params.require(:portfolio).permit(:job_id, :applicant_id, :earliest_entry, :salary_expectations, :foto, :cover_letter, :cv, {certificates:[]} )
+    params.require(:applicant).permit(:salutation,
+                                      :firstname,
+                                      :lastname,
+                                      :street,
+                                      :postcode,
+                                      :place,
+                                      :birthday,
+                                      :phone,
+                                      :email,
+                                      portfolio_attributes: [ :job_id,
+                                                               :earliest_entry,
+                                                               :salary_expectations,
+                                                               :foto,
+                                                               :cover_letter,
+                                                               :cv,
+                                                               :certificates ]
+                                       )
   end
 end

@@ -4,4 +4,6 @@ class Portfolio < ApplicationRecord
 
   belongs_to :job
   belongs_to :applicant
+
+  accepts_nested_attributes_for :job
 end

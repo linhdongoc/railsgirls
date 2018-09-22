@@ -1,0 +1,13 @@
+.button {
+
+  [type='submit'] {
+    background-color: $white;
+    color: $primary-color;
+    border: none;
+
+    &:focus {
+      border-color: transparent;
+      color: transparent;
+    }
+  }
+}
