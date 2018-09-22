@@ -1,5 +1,9 @@
 class Portfolio < ApplicationRecord
-  mount_uploader :foto, :cover_letter, :cv, :certificates, FileUploader
+  mount_uploader :foto, FileUploader
+  mount_uploader :cover_letter, FileUploader
+  mount_uploader :cv, FileUploader
+  mount_uploader :certificates, FileUploader
+
   serialize :certificates, JSON
 
   belongs_to :job
