@@ -22,6 +22,7 @@ gem 'gravtastic',                               '~> 3.2.6'
 gem 'foundation-rails',                         '~> 6.4'
 gem 'autoprefixer-rails',                       '~> 9.1'
 gem 'slim',                                     '~> 3.0'
+gem 'font-awesome-rails',                       '~> 4.6'
 
 group :development, :test do
   gem 'byebug',                                                               platform: :mri
