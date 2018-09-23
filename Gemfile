@@ -29,6 +29,9 @@ group :development, :test do
   gem 'capybara',                               '~> 3.6.0'
   gem 'rspec-rails',                            '~> 3.8.0'
   gem 'rspec_junit_formatter',                  '~> 0.4.1'
+  gem 'database_cleaner',                       '~> 1.7'
+  gem 'factory_bot_rails',                      '~> 4.11'
+  gem 'faker',                                  '~> 1.9'
 end
 
 group :development do
