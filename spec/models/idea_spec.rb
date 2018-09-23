@@ -1,20 +1,20 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe Idea do
-  it "has a name" do # yep, you can totally use 'it'
-    idea = Idea.create!(name: "My Awesome Idea Name") # creating a new idea 'instance'
-    second_idea = Idea.create!(name: "My Second Idea Name") # creating another new idea 'instance'
+  it 'has a name' do
+    idea = Idea.create!(name: 'My Awesome Idea Name')
+    second_idea = Idea.create!(name: 'My Second Idea Name')
 
-    expect(idea.name).to eq("My Awesome Idea Name") # this is our expectation
-    expect(second_idea.name).to eq("My Second Idea Name") # this is our expectation
+    expect(idea.name).to eq('My Awesome Idea Name')
+    expect(second_idea.name).to eq('My Second Idea Name')
   end
 
-  it "has a description" do
-    idea = Idea.create!(description: "My Awesome Idea Name. Yeah!")
-    second_idea = Idea.create!(description: "My Second Idea Name. Yeah!")
+  it 'has a description' do
+    idea = Idea.create!(description: 'My Awesome Idea Name. Yeah!')
+    second_idea = Idea.create!(description: 'My Second Idea Name. Yeah!')
 
-    expect(idea.description).to eq("My Awesome Idea Name. Yeah!")
-    expect(second_idea.description).to eq("My Second Idea Name. Yeah!")
+    expect(idea.description).to eq('My Awesome Idea Name. Yeah!')
+    expect(second_idea.description).to eq('My Second Idea Name. Yeah!')
   end
 
   it 'has many comments' do
