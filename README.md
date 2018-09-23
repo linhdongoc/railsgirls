@@ -4,55 +4,52 @@ This README would normally document whatever steps are necessary to get the appl
 
 Things you may want to cover:
 
+## System dependencies
+
 ## Ruby version
 
-> 2.5.1
+`2.5.1`
 
 ## Rails version
 
-> 5.2.1
+`5.2.1`
 
-## System dependencies
+## PostgreSQL version
+```
+$ postgres -V
+```
+
+`postgres (PostgreSQL) 10.4`
+
+
+HOW TO [Getting Started with PostgreSQL on Mac OSX](https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb)
+
+``` 
+$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+$ pg_ctl -D /usr/local/var/postgres stop -s -m fast
+```
 
 ## Configuration
 
-## Database creation
-
-> Drops and then recreates the database and includes your seeds.rb
-
 ```
-$ rake db:reset
-```
-
-> Run Migration on Heroku
-
-```
-$ heroku run rails db:migrate
+$ git clone https://github.com/linhdongoc/railsgirls.git
+$ cd railsgirls
+$ bundle install
+$ bundle exec rake db:setup
+or
+$ bundle exec rake db:reset
+$ rails s
 ```
 
-> By falling Migration because of networks/firewall 'ECONNREFUSED: connect ECONNREFUSED 50.19.103.36:5000', just:
+## Run the test suite with RSpec
 
-* Check Port Block, run: `$ telnet rendezvous.heroku.com 5000 `
-* and run `$ heroku run:detached rake db:migrate` [see more](http://www.mmartinez.org/3-methods-to-work-with-heroku-in-networks-with-blocked-ports/)
-
-
-## Database initialization
-
-> How to [Set up Postgres on Mac](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-mac)
-
-> Run postgres: ` $ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start `
-
-> Stop postgres: ` $ pg_ctl -D /usr/local/var/postgres stop -s -m fast `
-
-## How to run the test suite
-
-> Run all RSpec tests
+Run all RSpec tests
 
 ```
 $ bundle exec rspec
 ```
 
-> Run single RSpec test
+Run single RSpec test
 
 ```
 $ rspec spec/models/idea_spec.rb
@@ -60,43 +57,60 @@ $ rspec spec/models/idea_spec.rb
 
 ## Services (job queues, cache servers, search engines, etc.)
 
-## Deployment instructions
+## Continuous integration with Semaphoreci
+Semaphore lets you test and deploy code at the push of a button with hosted continuous integration and delivery.
 
-> Deploy on Heroku using Ruby version 2.3.4 and Postgres as database
+[Getting started with Semaphore](https://semaphoreci.com/docs/guide-to-getting-started-with-semaphore.html)
 
-> Follow this description [Detected sqlite3 gem which is not supported on Heroku](https://devcenter.heroku.com/articles/sqlite3)
 
-> Heroku only deploys code that is pushed to the `master` branch of your `heroku` remote.
-If you want to deploy code to Heroku from a non-`master` branch of your local repository, use the following syntax to ensure it is pushed to the remote's `master` branch
+>**Automatically** build, test and deploy your code as you **push it to GitHub**, preventing bugs from being deployed to production.
+**Also deploy to Heroku, too**
 
-```
-$ git push heroku <branch_name>:master
-```
+> Url: `https://semaphoreci.com/linhdongoc/railsgirls`
 
-> To Stop Heroku, run `$ heroku ps:scale web=0` [see more about dynos cli](https://devcenter.heroku.com/articles/dynos#cli-commands-for-dyno-management)
+## Deployment with Heroku
+Deploy on Heroku using Ruby on Rails and Postgres as database
 
-## Run Application
-```
-$ rails s
-```
+[Getting Started on Heroku with Rails 5.x](https://devcenter.heroku.com/articles/getting-started-with-rails5)
 
-## How to checkout a specific branch and specific commit
+> Dashboard Url: `https://dashboard.heroku.com/apps/murmuring-forest-90752`
+
+> Heroku Git URL: `https://git.heroku.com/murmuring-forest-90752.git`
 
 ```
-$ git checkout <commit sha1>
-$ git checkout <branch name>~1 // 1 == first commit
+$ heroku login
+$ heroku ps
+$ heroku ps:scale web=1
+$ git push heroku <branch_name>:master  # by manually push
+$ heroku logs --tail
+$ heroku open
 ```
 
-## **rails generate scaffold** commands hang when trying to create a model. How to fix?
+HOW TO prepare PG on Heroku
 
-> To reset the binstubs, just delete your bin/ directory in rails app and run:
+> PG Dashboard Url: `https://data.heroku.com/datastores/57c11e12-9f5c-4565-9d73-f694f90ad0c5`
 
 ```
-$ rake app:update:bin
+$ heroku login
+$ heroku pg:info
+$ watch heroku pg:info
+$ heroku pg:reset <DATABASE_URL>
+$ heroku run:detached rails db:migrate
+$ heroku run:detached rake db:seed
+
+$ heroku restart
 ```
 
-### Adding Gravatar to your App
+>To reset database manually about **Heroku PG Dashboard > Settings > Reset Database**
 
-> You need to have an e-mail address registered with Gravatar for this work.
+## SEE MORE
 
-> After setup Gravatar in your app, you need to signup with an e-mail address that is associated with a Gravatar.
+[CLI commands for dyno management](https://devcenter.heroku.com/articles/dynos#cli-commands-for-dyno-management)
+
+By falling Migration because of networks/firewall 
+[ECONNREFUSED: connect ECONNREFUSED 50.19.103.36:5000](http://www.mmartinez.org/3-methods-to-work-with-heroku-in-networks-with-blocked-ports/), just:
+
+```
+$ telnet rendezvous.heroku.com 5000
+$ heroku run:detached <task>
+```
