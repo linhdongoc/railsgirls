@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'pages/index'
-  #get 'applicants/new'
-  #get 'applicants/show'
+  get 'applicants/new'
+  get 'applicants/show'
 
   resources :applicants
   resources :comments
