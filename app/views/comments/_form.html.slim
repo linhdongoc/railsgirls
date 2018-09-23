@@ -1,0 +1,22 @@
+= form_with(model: comment, local: true) do |form|
+  - if comment.errors.any?
+    .grid-x
+      .cell.small-12#error_explanation
+        h2 #{pluralize(comment.errors.count, "error")} prohibited this comment from being saved:
+        ul
+          - comment.errors.full_messages.each do |message|
+            li= message
+  .grid-x
+    .cell.small-12.field
+      = form.label :user_name
+      = form.text_field :user_name, id: :comment_user_name
+
+    .cell.small-12.field
+      = form.label :body
+      = form.text_area :body, id: :comment_body
+
+    .cell.small-12
+      = form.hidden_field :idea_id
+
+    .cell.actions
+      .button.hollow= form.submit

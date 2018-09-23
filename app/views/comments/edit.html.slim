@@ -1,0 +1,6 @@
+h1 Editing Comment
+
+= render 'form', comment: @comment
+.clearfix
+  .button.hollow.float-right= link_to 'Show', @comment
+  .button.hollow.float-right= link_to 'Back', comments_path

@@ -1,0 +1,13 @@
+p#notice= notice
+
+h1 Listing ideas
+
+.grid-x.grid-margin-x
+  - @ideas.each do |idea|
+    .cell.small-2
+      = image_tag idea.picture_url if idea.picture.present?
+      h4= link_to idea.name, idea
+      = idea.description
+
+br
+.button.hollow= link_to 'New Idea', new_idea_path
