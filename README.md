@@ -94,11 +94,12 @@ HOW TO prepare PG on Heroku
 $ heroku login
 $ heroku pg:info
 $ watch heroku pg:info
-$ heroku pg:reset <DATABASE_URL>
-$ heroku run:detached rails db:migrate
+$ heroku pg:reset DATABASE --confirm murmuring-forest-90752
+$ heroku run:detached rake db:migrate
 $ heroku run:detached rake db:seed
 
 $ heroku restart
+$ heroku run rails console
 ```
 
 >To reset database manually about **Heroku PG Dashboard > Settings > Reset Database**
