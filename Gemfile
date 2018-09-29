@@ -23,17 +23,16 @@ gem 'foundation-rails',                         '~> 6.4'
 gem 'autoprefixer-rails',                       '~> 9.1'
 gem 'slim',                                     '~> 3.0'
 gem 'font-awesome-rails',                       '~> 4.6'
-gem 'byebug',                                                               platform: :mri
-gem 'factory_bot_rails',                        '~> 4.11'
-gem 'faker',                                    '~> 1.9'
 
-group :test do
+group :development, :test do
   gem 'capybara',                               '~> 3.6.0'
   gem 'rspec-rails',                            '~> 3.8.0'
   gem 'rspec_junit_formatter',                  '~> 0.4.1'
   gem 'database_cleaner',                       '~> 1.7'
   gem 'shoulda-matchers',                       '~> 3.1'
-  #gem 'rails-controller-testing',               '~> 1.0'
+  gem 'factory_bot_rails',                      '~> 4.11'
+  gem 'faker',                                  '~> 1.9'
+  gem 'byebug',                                                               platform: :mri
 end
 
 group :development do
