@@ -1,23 +1,20 @@
 = breadcrumbs_tag [ 'Comments']
+
 p#notice= notice
 
 h1 Comments
 
-table
-  thead
-    tr
-      th User name
-      th Body
-      th Idea
-      th colspan="3"
-  tbody
-    - @comments.each do |comment|
-      tr
-        td= comment.user_name
-        td= comment.body
-        td= comment.idea_id
-        td= link_to 'Show', comment
-        td= link_to 'Edit', edit_comment_path(comment)
-        td= link_to 'Destroy', comment, method: :delete, data: {confirm: 'Are you sure?'}
-br
+.grid-x.grid-margin-x
+  - @comments.each do |comment|
+    .cell.small-12.medium-4.large-3.margin-bottom-1
+      = image_tag (show_picture(comment.idea_id))
+    .cell.small-12.medium-8.large-9
+      cite= comment.user_name
+      blockquote.font-italic= comment.body
+      div.text-right.align-self-bottom
+        div
+          = link_to '', comment, class: 'fa fa-eye'
+          = link_to '', edit_comment_path(comment), class: 'fa fa-edit'
+          = link_to '', comment, class: 'fa fa-trash', method: :delete, data: {confirm: 'Are you sure?'}
+
 .button.hollow= link_to 'New Comment', new_comment_path
