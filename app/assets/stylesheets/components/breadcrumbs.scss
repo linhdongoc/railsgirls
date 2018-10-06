@@ -6,7 +6,7 @@
   margin-top: $global-margin;
   text-transform: uppercase;
 
-  @include breakpoint(large) {
+  @include breakpoint(medium up) {
     margin-top: 0;
   }
 }
@@ -15,7 +15,7 @@
   display: none;
   margin-right: rem-calc(10);
 
-  @include breakpoint(medium down) {
+  @include breakpoint(small down) {
     &.previous {
       display: inline-block;
 
@@ -27,7 +27,7 @@
     }
   }
 
-  @include breakpoint(large) {
+  @include breakpoint(medium up) {
     display: inline;
 
     &:first-child::before {
