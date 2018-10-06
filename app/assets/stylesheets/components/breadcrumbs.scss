@@ -1,0 +1,44 @@
+.breadcrumbs {
+  color: $secondary-color;
+  font-size: 0.8rem;
+  margin-bottom: $global-margin / 2;
+  margin-left: 0;
+  margin-top: $global-margin;
+  text-transform: uppercase;
+
+  @include breakpoint(large) {
+    margin-top: 0;
+  }
+}
+
+.breadcrumb-item {
+  display: none;
+  margin-right: rem-calc(10);
+
+  @include breakpoint(medium down) {
+    &.previous {
+      display: inline-block;
+
+      &::before {
+        color: $primary-color;
+        content: '❮';
+        margin-right: rem-calc(5);
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    display: inline;
+
+    &:first-child::before {
+      content: '';
+      margin-right: 0;
+    }
+
+    &::before {
+      content: '❯';
+      display: inline-block;
+      margin-right: rem-calc(10);
+    }
+  }
+}

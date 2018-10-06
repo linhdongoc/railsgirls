@@ -1,3 +1,5 @@
+= breadcrumbs_tag [ link_to('Ideas', ideas_path), "Idea #{@idea.id}" ]
+
 .grid-x.grid-margin-x
   .cell.small-4
     = image_tag(@idea.picture.url) if @idea.picture.present?
