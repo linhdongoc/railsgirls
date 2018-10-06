@@ -10,6 +10,10 @@ describe Idea do
       expect(@idea1).to be_valid
     end
 
+    it 'has no comment' do
+      expect(@idea1.comments.length).to be(0)
+    end
+
     it 'is invalid without name' do
       idea2 = build(:idea, name: nil)
       expect(idea2).to_not be_valid
@@ -18,6 +22,11 @@ describe Idea do
     it 'is valid without description' do
       idea2 = build(:idea, description: nil)
       expect(idea2).to be_valid
+    end
+
+    it 'has two comments' do
+      idea3 = create(:idea_with_comments)
+      expect(idea3.comments.length).to be(2)
     end
   end
 end
