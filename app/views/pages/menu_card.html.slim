@@ -1,0 +1,25 @@
+.grid-container
+  = breadcrumbs_tag [ link_to('Page', pages_index_path), 'Menu card']
+
+  section
+    .headline.h2.text-center= 'Unsere Menü Karte'
+
+  .grid-x
+    .cell.small-12
+      - @foods.each do |food|
+        .grid-x.grid-margin-x.hero.align-middle
+          .cell.medium-7.hero-text-container
+            .grid-x
+              .cell.medium-12.large-9.large-centered.hero-text
+                h2= food[:headline]
+                .teaser= food[:teaser]
+
+                ul
+                  li= "Gericht-Nr. #{food[:id]}"
+                  - food[:infos].each do |info|
+                    li= additional_list(info)
+
+                .price.fa.fa-eur= " #{food[:price]}"
+
+          .cell.medium-5.hero-image-container
+            = image_tag "foods/food-#{food[:id]}.png"

@@ -1,0 +1,63 @@
+body {
+  background-color: rgba($light-gray, .3);
+}
+
+section {
+  background-color: $white;
+  .headline {
+    color: $secondary-color;
+  }
+}
+
+.hero {
+  margin: 15px 0;
+  background-color: $white;
+}
+
+.hero-text {
+  padding: 4.5%;
+
+  @include breakpoint(medium up) {
+    background-color: rgba($light-gray, .7);
+  }
+
+  h2 {
+    color: #f39100;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    color: $secondary-color;
+    padding-left: 1.3rem;
+
+    &::before {
+      content: "\f05a"; /* FontAwesome Unicode */
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1.3em;
+      width: 1.3em;
+    }
+  }
+
+  .teaser {
+    color: $secondary-color;
+  }
+
+  .price {
+    color: $secondary-color;
+    font-size: x-large;
+  }
+}
+
+.hero-image-container {
+
+  img {
+    height: auto;
+    padding: 4.5%;
+  }
+}
