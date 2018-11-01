@@ -73,9 +73,9 @@ Deploy on Heroku using Ruby on Rails and Postgres as database
 
 [Getting Started on Heroku with Rails 5.x](https://devcenter.heroku.com/articles/getting-started-with-rails5)
 
-> Dashboard Url: `https://dashboard.heroku.com/apps/murmuring-forest-90752`
+> Dashboard Url: `https://dashboard.heroku.com/apps//railsgirls-ld`
 
-> Heroku Git URL: `https://git.heroku.com/murmuring-forest-90752.git`
+> Heroku Git URL: `https://git.heroku.com//railsgirls-ld.git`
 
 ```
 $ heroku login
@@ -88,13 +88,13 @@ $ heroku open
 
 HOW TO prepare PG on Heroku
 
-> PG Dashboard Url: `https://data.heroku.com/datastores/57c11e12-9f5c-4565-9d73-f694f90ad0c5`
+> PG Dashboard Url: `https://data.heroku.com/datastores/72b86345-1db1-4004-a856-216282b7ce81`
 
 ```
 $ heroku login
 $ heroku pg:info
 $ watch heroku pg:info
-$ heroku pg:reset DATABASE --confirm murmuring-forest-90752
+$ heroku pg:reset DATABASE --confirm /railsgirls-ld
 $ heroku run:detached rake db:migrate
 $ heroku run:detached rake db:seed
 
