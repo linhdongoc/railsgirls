@@ -73,9 +73,9 @@ Deploy on Heroku using Ruby on Rails and Postgres as database
 
 [Getting Started on Heroku with Rails 5.x](https://devcenter.heroku.com/articles/getting-started-with-rails5)
 
-> Dashboard Url: `https://dashboard.heroku.com/apps//railsgirls-ld`
+> Dashboard Url: `https://dashboard.heroku.com/apps/railsgirls-ld`
 
-> Heroku Git URL: `https://git.heroku.com//railsgirls-ld.git`
+> Heroku Git URL: `https://git.heroku.com/railsgirls-ld.git`
 
 ```
 $ heroku login
@@ -94,7 +94,7 @@ HOW TO prepare PG on Heroku
 $ heroku login
 $ heroku pg:info
 $ watch heroku pg:info
-$ heroku pg:reset DATABASE --confirm /railsgirls-ld
+$ heroku pg:reset DATABASE --confirm railsgirls-ld
 $ heroku run:detached rake db:migrate
 $ heroku run:detached rake db:seed
 
@@ -114,4 +114,15 @@ By falling Migration because of networks/firewall
 ```
 $ telnet rendezvous.heroku.com 5000
 $ heroku run:detached <task>
+```
+
+## Create a Heroku remote
+
+```
+$ heroku apps
+$ git remote -v
+
+# if you have already created your heroku app, you can easily add a remote to your local repo.
+$ heroku git:remote -a railsgirls-ld
+$ git push heroku master
 ```
