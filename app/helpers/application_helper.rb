@@ -10,4 +10,8 @@ module ApplicationHelper
       content_tag(:ul, chunk_tags, class: 'breadcrumbs')
     end
   end
+
+  def menu_item_is_active_class(link_path)
+    current_page?(link_path) ? 'is-menu-item-active' : ''
+  end
 end

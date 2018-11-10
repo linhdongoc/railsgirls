@@ -1,27 +1,26 @@
-.grid-x.grid-margin-x
-  .cell.small-10
+.header-container.grid-x.grid-margin-x
+  .header-logo.cell.small-10
     = link_to root_path do
       = image_tag 'logos/rgsoc-logo_red-transparent-background.png', class: 'main-logo', title: 'Rails Girls', alt: 'Rails Girls'
-  .cell.small-2.align-self-bottom
+  .cell.small-2.align-self-middle
     button.button.menu-icon type="button" data-toggle="offCanvasTop" aria-expanded="false"
   .cell.small-12
     .off-canvas-wrapper
       #offCanvasTop.off-canvas.position-top data-off-canvas=""
         button.close-button aria-label=("Close menu") data-close="" type="button"
           span aria-hidden="true"  &times;
-        ul.menu.vertical
-          li= link_to 'Ideas', ideas_path
-          li= link_to 'Job', jobs_path
-          li= link_to 'Comments', comments_path
-          li
-            hr
-          li
-            - if user_signed_in?
-              = link_to current_user.email, edit_user_registration_path
-              = link_to destroy_user_session_path, method: :delete do
-                = image_tag 'icons/logout.svg'
-            - else
-              = link_to 'Sign up', new_user_registration_path
-              = link_to 'Login', new_user_session_path
+        .header-main-nav.ul.menu.vertical
+          - if user_signed_in?
+            li= link_to 'Ideas', ideas_path
+            li= link_to 'Job', jobs_path
+            li= link_to 'Comments', comments_path
+            li
+              hr
+            li
+              = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
+              = link_to 'Logout', destroy_user_session_path, method: :delete
+          - else
+            li
+              = link_to 'Sign up', new_user_registration_path, class: 'sign-up-link'
+              = link_to 'Login', new_user_session_path, class: 'login-link'
       .off-canvas-content data-off-canvas-content=''
-        hr
