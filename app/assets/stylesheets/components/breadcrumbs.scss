@@ -1,9 +1,9 @@
-.breadcrumbs {
+ul.breadcrumbs {
   color: $secondary-color;
   font-size: 0.8rem;
+  padding-top: $global-padding;
   margin-bottom: $global-margin / 2;
   margin-left: 0;
-  margin-top: $global-margin;
   text-transform: uppercase;
 
   @include breakpoint(medium up) {

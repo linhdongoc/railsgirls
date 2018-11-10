@@ -11,8 +11,8 @@ html lang="en"
     = csrf_meta_tag
 
   body
+    .show-for-small-only= render partial: 'shared/mobile_navigation'
+    .hide-for-small-only= render partial: 'shared/header'
     .grid-container
-      .show-for-small-only= render partial: 'shared/mobile_navigation'
-      .hide-for-small-only= render partial: 'shared/header'
       == yield
-      = render partial: 'shared/footer'
+    = render partial: 'shared/footer'
