@@ -1,0 +1,21 @@
+.sessions-new.grid-x.align-center.text-center
+  .cell.login-logo
+    = image_tag 'icons/ruby_on_rails.png'
+  .cell.login-headline
+    h2= 'Hey, good to see you again!'
+    h5= 'Sign in to get going.'
+  .cell.small-11.medium-6.large-4.login-hero
+    .grid-y
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .cell
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .cell
+          = f.label :password
+          = f.password_field :password, autocomplete: "none"
+        .cell.actions
+          = f.submit 'Sign in'
+  .cell.login-footer
+    .grid-x.align-center
+      .cell.small-5.medium-3= link_to 'Sign up', new_registration_path(resource_name)
+      .cell.small-5.medium-3= link_to 'Forgot your password?', new_password_path(resource_name)
