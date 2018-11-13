@@ -1,24 +1,18 @@
 .header-container.grid-x.grid-margin-x
   .header-auth.cell.hide-for-small-only.small-12
-    - if user_signed_in?
-      = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
-      |&nbsp
-      = link_to destroy_user_session_path, method: :delete do
-        = image_tag 'icons/circle-arrow-logout.svg', class: 'logout-icon'
-    - else
-      = link_to 'Sign up', new_user_registration_path, class: 'sign-up-link'
-      |&nbsp or &nbsp
-      = link_to 'Login', new_user_session_path, class: 'login-link'
+    = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
+    |&nbsp
+    = link_to destroy_user_session_path, method: :delete do
+      = image_tag 'icons/circle-arrow-logout.svg', class: 'logout-icon'
 
   .header-logo.cell.small-7.medium-4
     = link_to root_path do
       = image_tag 'logos/rgsoc-logo_red-transparent-background.png', class: 'main-logo', title: 'Rails Girls', alt: 'Rails Girls'
   .header-main-nav.cell.hide-for-small-only.medium-8.align-self-middle
-    - if user_signed_in?
-      ul.menu
-        li class="#{ menu_item_is_active_class(ideas_path) }"
-          = link_to 'Ideas', ideas_path
-        li class="#{ menu_item_is_active_class(jobs_path) }"
-          = link_to 'Jobs', jobs_path
-        li class="#{ menu_item_is_active_class(comments_path) }"
-          = link_to 'Comments', comments_path
+    ul.menu
+      li class="#{ menu_item_is_active_class(ideas_path) }"
+        = link_to 'Ideas', ideas_path
+      li class="#{ menu_item_is_active_class(jobs_path) }"
+        = link_to 'Jobs', jobs_path
+      li class="#{ menu_item_is_active_class(comments_path) }"
+        = link_to 'Comments', comments_path
