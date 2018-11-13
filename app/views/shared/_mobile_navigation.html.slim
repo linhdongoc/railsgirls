@@ -10,17 +10,12 @@
         button.close-button aria-label=("Close menu") data-close="" type="button"
           span aria-hidden="true"  &times;
         .header-main-nav.ul.menu.vertical
-          - if user_signed_in?
-            li= link_to 'Ideas', ideas_path
-            li= link_to 'Job', jobs_path
-            li= link_to 'Comments', comments_path
-            li
-              hr
-            li
-              = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
-              = link_to 'Logout', destroy_user_session_path, method: :delete
-          - else
-            li
-              = link_to 'Sign up', new_user_registration_path, class: 'sign-up-link'
-              = link_to 'Login', new_user_session_path, class: 'login-link'
+          li= link_to 'Ideas', ideas_path
+          li= link_to 'Job', jobs_path
+          li= link_to 'Comments', comments_path
+          li
+            hr
+          li
+            = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
+            = link_to 'Logout', destroy_user_session_path, method: :delete
       .off-canvas-content data-off-canvas-content=''
