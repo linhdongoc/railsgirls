@@ -1,4 +1,4 @@
-.sessions-new {
+.passwords-edit {
   background-color: #F6FBFD;
   padding: 5rem 0;
 
@@ -7,16 +7,7 @@
   }
 }
 
-.sessions-new-logo {
-  img {
-    max-width: 10%;
-    @include breakpoint(small down) {
-      display: none;
-    }
-  }
-}
-
-.sessions-new-headline {
+.passwords-edit-headline {
   h2 {
     color: #22606D;
     font-weight: bold;
@@ -29,13 +20,9 @@
       font-size: 1.7rem;
     }
   }
-
-  h5 {
-    color: #668EA6;
-  }
 }
 
-.sessions-new-hero {
+.passwords-edit-container {
   background-color: $white;
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -50,7 +37,7 @@
   }
 
   input {
-    &[type=email], &[type=password] {
+    &[type=password] {
       border: 1px solid #caeaf6;
       border-radius: 7px;
     }
@@ -78,6 +65,6 @@
   }
 }
 
-.sessions-new-footer a {
+.passwords-edit-footer a {
   color: #0D99DF;
 }

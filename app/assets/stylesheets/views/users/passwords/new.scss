@@ -1,4 +1,4 @@
-.sessions-new {
+.passwords-new {
   background-color: #F6FBFD;
   padding: 5rem 0;
 
@@ -7,7 +7,7 @@
   }
 }
 
-.sessions-new-logo {
+.passwords-new-logo {
   img {
     max-width: 10%;
     @include breakpoint(small down) {
@@ -16,7 +16,7 @@
   }
 }
 
-.sessions-new-headline {
+.passwords-new-headline {
   h2 {
     color: #22606D;
     font-weight: bold;
@@ -35,7 +35,7 @@
   }
 }
 
-.sessions-new-hero {
+.passwords-new-hero {
   background-color: $white;
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -78,6 +78,6 @@
   }
 }
 
-.sessions-new-footer a {
+.passwords-new-footer a {
   color: #0D99DF;
 }

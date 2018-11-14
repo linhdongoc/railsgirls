@@ -1,4 +1,4 @@
-.sessions-new {
+.registrations-new {
   background-color: #F6FBFD;
   padding: 5rem 0;
 
@@ -7,7 +7,7 @@
   }
 }
 
-.sessions-new-logo {
+.registrations-new-logo {
   img {
     max-width: 10%;
     @include breakpoint(small down) {
@@ -16,7 +16,7 @@
   }
 }
 
-.sessions-new-headline {
+.registrations-new-headline {
   h2 {
     color: #22606D;
     font-weight: bold;
@@ -35,7 +35,7 @@
   }
 }
 
-.sessions-new-hero {
+.registrations-new-hero {
   background-color: $white;
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -65,19 +65,25 @@
   }
 
   .actions {
-    background-color: #3BD788;
+    background-color: #9BC3A8;
     border-radius: 7px;
 
     &:hover {
-      background-color: #2FE388;
+      background-color: #A0CDAE;
     }
 
     &:active {
-      background-color: #28C274;
+      background-color: #88AF94;
     }
   }
 }
 
-.sessions-new-footer a {
-  color: #0D99DF;
+.registrations-new-footer {
+  span {
+    color: #668EA6;
+  }
+
+  .a {
+    color: #0D99DF;
+  }
 }
