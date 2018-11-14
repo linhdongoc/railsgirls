@@ -1,0 +1,29 @@
+.registrations-new.grid-x.align-center.text-center
+  .cell.registrations-new-logo
+    = image_tag 'icons/ruby_on_rails.png'
+  .cell.registrations-new-headline
+    h2= 'Hey, welcome!'
+    h5= 'Tell us a little about yourself.'
+  .cell.small-11.medium-6.large-4.registrations-new-hero
+    .grid-y
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .cell
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .cell
+          = f.label :password
+          = f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum"
+        .cell
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .cell.actions
+          = f.submit 'Next'
+  .cell.registrations-new-footer
+    .grid-x.align-center
+      .cell.small-11.medium-5
+        span= 'By clicking "Next", you accept our '
+        span.a= 'Terms of Use'
+        span= ' and have read our '
+        span.a= 'Privacy Policy.'
+      .cell
+        = link_to 'Log in', new_session_path(resource_name)
