@@ -1,26 +1,23 @@
 .header-container {
   padding-bottom: 5px;
   margin-bottom: 5px;
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,.1);
 }
 
 .header-auth {
   padding: 10px;
   text-align: right;
-  border-bottom: 1px solid $light-gray;
-  background-color: $light-gray;
 
   .user-email-link,
   .sign-up-link,
   .login-link {
-    background-color: $light-gray;
     border: 1px solid $primary-color;
-    border-radius: 10px;
+    border-radius: 7px;
     padding: 6px;
   }
 
   img.logout-icon {
-    height: 20px;
+    height: 35px;
+    margin-left: 5px;
   }
 }
 

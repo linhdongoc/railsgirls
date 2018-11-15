@@ -1,0 +1,37 @@
+.career {
+  background-color: $white;
+  color: $quaternary-color;
+  padding: 2rem 0;
+}
+
+.career-container {
+  padding: 1rem 0;
+}
+
+.career-item {
+  margin-top: 15px;
+}
+
+.card-image {
+  border: none;
+  img {
+    width: 10%;
+  }
+}
+
+.card-section {
+  border: 1px solid $quaternary-color;
+
+  h5 {
+    color: $secondary-color;
+  }
+
+  .button {
+    background-color: $quaternary-color;
+    border-radius: 7px;
+  }
+
+  a {
+    color: $white;
+  }
+}

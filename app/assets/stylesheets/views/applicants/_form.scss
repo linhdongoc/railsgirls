@@ -1,6 +1,5 @@
 .button {
-
-  [type='submit'] {
+  &[type='submit'] {
     background-color: $white;
     color: $primary-color;
     border: none;

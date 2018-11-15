@@ -1,0 +1,14 @@
+.confirmations-new.grid-x.align-center.text-center
+  .cell.confirmations-new-logo
+    = image_tag 'icons/ruby_on_rails.png'
+  .cell.confirmations-new-headline
+    h2= 'Resend confirmation instructions'
+  .cell.small-11.medium-6.large-4.confirmations-new-hero
+    .grid-y
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .cell
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+        .cell.actions
+          = f.submit 'Resend confirmation instructions'

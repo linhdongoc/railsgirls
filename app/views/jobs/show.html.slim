@@ -1,6 +1,5 @@
-= breadcrumbs_tag [ link_to('Jobs', jobs_path), @job.title ]
-
 .grid-container
+  = breadcrumbs_tag [ link_to('Jobs', jobs_path), @job.title ]
   .grid-x
     .cell.small-12
       h3= @job.title

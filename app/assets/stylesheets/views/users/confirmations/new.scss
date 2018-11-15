@@ -1,0 +1,75 @@
+.confirmations-new {
+  background-color: #F6FBFD;
+  padding: 5rem 0;
+
+  @include breakpoint(small down) {
+    padding: 1rem 0;
+  }
+}
+
+.confirmations-new-logo {
+  img {
+    max-width: 10%;
+    @include breakpoint(small down) {
+      display: none;
+    }
+  }
+}
+
+.confirmations-new-headline {
+  h2 {
+    color: #22606D;
+    font-weight: bold;
+
+    @include breakpoint(medium down) {
+      font-size: 2.5rem;
+    }
+
+    @include breakpoint(small down) {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.confirmations-new-hero {
+  background-color: $white;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: rgba(114, 182, 234, 0.2) 1px 0 30px;
+
+  label {
+    font-weight: bold;
+    color: #22606D;
+    background-color: initial;
+    text-align: left;
+  }
+
+  input {
+    &[type=email] {
+      border: 1px solid #caeaf6;
+      border-radius: 7px;
+    }
+
+    &[type=submit] {
+      border: none;
+      background-color: initial;
+      color: $white;
+      font-weight: bold;
+      padding: 1rem 0;
+    }
+  }
+
+  .actions {
+    background-color: #3BD788;
+    border-radius: 7px;
+
+    &:hover {
+      background-color: #2FE388;
+    }
+
+    &:active {
+      background-color: #28C274;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.unlocks-new.grid-x.align-center.text-center
+  .cell.unlocks-new-logo
+    = image_tag 'icons/ruby_on_rails.png'
+  .cell.unlocks-new-headline
+    h2= 'Resend unlock instructions'
+  .cell.small-11.medium-6.large-4.unlocks-new-hero
+    .grid-y
+      = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .cell
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .cell.actions
+          = f.submit 'Resend unlock instructions'
