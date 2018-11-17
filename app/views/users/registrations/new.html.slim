@@ -11,6 +11,9 @@
           = f.label :email
           = f.email_field :email, autofocus: true, autocomplete: "email"
         .cell
+          = f.label :username
+          = f.text_field :username, autofocus: true
+        .cell
           = f.label :password
           = f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length} characters minimum"
         .cell

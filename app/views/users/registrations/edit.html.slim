@@ -8,6 +8,9 @@
         .cell
           = f.label :email
           = f.email_field :email, autofocus: true, autocomplete: "email"
+        .cell
+          = f.label :username
+          = f.text_field :username, autofocus: true
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           .callout.warning= "Currently waiting confirmation for: #{ resource.unconfirmed_email }"
         .cell

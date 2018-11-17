@@ -8,8 +8,8 @@
     .grid-y
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .cell
-          = f.label :email
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.label :login
+          = f.text_field :login, autofocus: true
         .cell
           = f.label :password
           = f.password_field :password, autocomplete: "none"
