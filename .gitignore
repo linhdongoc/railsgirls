@@ -18,6 +18,7 @@
 /.idea
 /.ruby-gemset
 /.DS_Store
+**/.DS_Store
 
 # Ingnore Sample files
 /db/*.sample
