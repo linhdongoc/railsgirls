@@ -1,8 +1,8 @@
 .grid-container
   = breadcrumbs_tag [ link_to('Comments', comments_path), 'Comment new']
 
-h1 New Comment
+  h1 New Comment
 
-= render 'form', comment: @comment
-.clearfix
-  .button.hollow.float-right= link_to 'Back', comments_path
+  = render 'form', comment: @comment
+  .clearfix
+    .button.hollow.float-right= link_to 'Back', comments_path

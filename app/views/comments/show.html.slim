@@ -1,19 +1,19 @@
 .grid-container
   = breadcrumbs_tag [ link_to('Comments', comments_path), "Comment #{@comment.id} "]
 
-.grid-x
-  .cell.small-12.medium-2
-    strong User name:
-  .cell.small-12.medium-10
-    = @comment.user_name
-  .cell.small-12.medium-2
-    strong Body:
-  .cell.small-12.medium-10
-    = @comment.body
-  .cell.small-12.medium-2
-    strong Idea
-  .cell.small-12.medium-10
-    = @comment.idea_id
-  .cell.clearfix.small-12
-    .button.hollow.float-right= link_to 'Edit', edit_comment_path(@comment)
-    .button.hollow.float-right= link_to 'Back', comments_path
+  .grid-x
+    .cell.small-12.medium-2
+      strong User name:
+    .cell.small-12.medium-10
+      = @comment.user_name
+    .cell.small-12.medium-2
+      strong Body:
+    .cell.small-12.medium-10
+      = @comment.body
+    .cell.small-12.medium-2
+      strong Idea
+    .cell.small-12.medium-10
+      = @comment.idea_id
+    .cell.clearfix.small-12
+      .button.hollow.float-right= link_to 'Edit', edit_comment_path(@comment)
+      .button.hollow.float-right= link_to 'Back', comments_path

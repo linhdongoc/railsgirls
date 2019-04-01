@@ -1,8 +1,8 @@
 .grid-container
   = breadcrumbs_tag [ link_to('Ideas', ideas_path), 'Idea new' ]
 
-h1 New Idea
+  h1 New Idea
 
-= render 'form', idea: @idea
-.clearfix
-  .button.hollow.float-right= link_to 'Back', ideas_path
+  = render 'form', idea: @idea
+  .clearfix
+    .button.hollow.float-right= link_to 'Back', ideas_path

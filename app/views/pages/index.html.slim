@@ -1,8 +1,8 @@
 .grid-container
   = breadcrumbs_tag ['Page']
 
-- if notice
-  = render 'shared/callout', locale: notice
+  - if notice
+    = render 'shared/callout', locale: notice
 
-= render partial: 'shared/event'
-= render partial: 'shared/career'
+  = render partial: 'shared/event'
+  = render partial: 'shared/career'
