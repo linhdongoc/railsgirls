@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ApplicantsController, type: :controller do
+RSpec.describe PortfoliosController, type: :controller do
 
   describe "GET #new" do
     xit "returns http success" do
