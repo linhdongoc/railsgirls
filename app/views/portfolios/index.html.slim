@@ -1,0 +1,25 @@
+.grid-container
+  = breadcrumbs_tag [ 'Portfolios' ]
+
+  h1 Listing portfolios
+
+  .grid-x
+    .cell.small-12.table-scroll
+      table.hover
+        thead
+          tr
+            th Job Titel
+            th Eintrittsdatum
+            th Gehaltsvorstellung
+            th Anhang
+
+        tbody
+          - @portfolios.each do |portfolio|
+            tr
+              td= link_to Job.find(portfolio.job_id).title, job_path(portfolio.job_id)
+              td= portfolio.earliest_entry
+              td= portfolio.salary_expectations
+              td
+                ul
+                - portfolio.documents.each do |document|
+                  li= document.url

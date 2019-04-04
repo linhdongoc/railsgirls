@@ -5,10 +5,8 @@ Rails.application.routes.draw do
 
   get 'pages/index'
   get 'pages/menu_card'
-  get 'applicants/new'
-  get 'applicants/show'
 
-  resources :applicants
+  resources :portfolios
   resources :comments
   resources :ideas
   resources :jobs

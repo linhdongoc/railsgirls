@@ -1,0 +1,39 @@
+= form_with(model: portfolio, local: true) do |form|
+  - if portfolio.errors.any?
+    .grid-x
+      .cell.small-12#error_explanation
+        h2 #{pluralize(portfolio.errors.count, "error")} prohibited this idea from being saved:
+        ul
+          - portfolio.errors.full_messages.each do |message|
+            li= message
+  h4 Rahmendaten
+  .grid-x
+    .cell.small-12.field
+      = form.label :earliest_entry
+      = form.date_field :earliest_entry, id: :portfolio_earliest_entry
+
+    .cell.small-12.field
+      = form.label :salary_expectations
+      = form.text_field :salary_expectations, id: :portfolio_salary_expectations
+
+    .cell.small-12
+      = form.hidden_field :job_id, id: :portfolio_job_id, value: @job.id
+
+    .cell.small-12
+      = form.hidden_field :user_id, id: :portfolio_user_id, value: current_user.id
+
+  h4 Anlagen
+  .grid-x
+    .cell.small-12
+      p Du kannst hier entweder ein gesamtes Bewerbungs-Dokument oder einzelne Dokumente hochladen.
+        Folgende Dateiformate sind möglich: PDF, JPG, PNG, GIF.
+        Ein Einzeldokument darf die Größe von 15 MB nicht überschreiten. Bitte laden keine PDF-Dokumente
+        hoch, die mit einem Passwort- oder Schreibschutz versehen sind.
+
+    .cell.small-12.field
+      = form.label :documents
+      = form.file_field :documents, id: :portfolio_documents, multiple: true
+
+  .grid-x
+    .cell.actions
+      .button.hollow= form.submit
