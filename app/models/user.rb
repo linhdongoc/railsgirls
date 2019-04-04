@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   attr_accessor :login
 
+  has_many :jobs
+  has_many :portfolios, through: :jobs
+
   validates :email, presence: true, uniqueness: { case_sensitive: true }
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 5 }

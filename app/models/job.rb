@@ -1,4 +1,4 @@
 class Job < ApplicationRecord
-  has_many :applicants
-  has_many :portfolios, through: :applicants
+  has_many :users
+  has_many :portfolios, through: :users
 end
