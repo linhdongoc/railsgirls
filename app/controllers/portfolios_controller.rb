@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio.save
-        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully created.' }
+        format.html { redirect_to action: 'index', notice: 'Portfolio was successfully created.' }
         format.json { render :index, status: :created }
       else
         format.html { render :new, params: @job }
