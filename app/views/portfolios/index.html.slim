@@ -8,6 +8,7 @@
       table.hover
         thead
           tr
+            th ID
             th Job Titel
             th Eintrittsdatum
             th Gehaltsvorstellung
@@ -16,6 +17,7 @@
         tbody
           - @portfolios.each do |portfolio|
             tr
+              td= portfolio.id
               td= link_to Job.find(portfolio.job_id).title, job_path(portfolio.job_id)
               td= portfolio.earliest_entry
               td= portfolio.salary_expectations
