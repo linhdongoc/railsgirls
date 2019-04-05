@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'pages/index'
   get 'pages/menu_card'
+  get 'portfolios/download/:document', to: 'portfolios#download', as: 'portfolios_download'
 
   resources :portfolios
   resources :comments

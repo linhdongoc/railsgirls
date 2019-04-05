@@ -25,6 +25,12 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  def download
+    document = "#{ params[:document] }.#{ params[:format] }"
+    content_type =  MIME::Types.type_for(document).first.content_type
+    send_file "#{Rails.root}/public/#{document}", type: content_type, disposition: 'inline'
+  end
+
   private
   def set_portfolio
     @portfolio = Portfolio.find(params[:id])

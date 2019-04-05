@@ -24,4 +24,4 @@
               td
                 ul
                 - portfolio.documents.each do |document|
-                  li= document.url
+                  li= link_to File.basename(document.url), portfolios_download_path(document.url) ,target: '_blank'
