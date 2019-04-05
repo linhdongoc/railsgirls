@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show]
 
   def index
-    @portfolios = Portfolio.where(user_id: current_user.id)
+    @portfolios = Portfolio.from_user(current_user.id)
   end
 
   def new
