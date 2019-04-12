@@ -1,9 +1,6 @@
-# README
-[![Build Status](https://semaphoreci.com/api/v1/linhdongoc/railsgirls/branches/master/badge.svg)](https://semaphoreci.com/linhdongoc/railsgirls)
+# Rails Girls [![Build Status](https://semaphoreci.com/api/v1/linhdongoc/railsgirls/branches/master/badge.svg)](https://semaphoreci.com/linhdongoc/railsgirls)
 
-This README would normally document whatever steps are necessary to get the application up and running.
-
-Things you may want to cover:
+Your cookbook to the world of web development
 
 ## System dependencies
 
@@ -13,7 +10,7 @@ Things you may want to cover:
 
 ## Rails version
 
-`5.2.1`
+`5.2.3`
 
 ## PostgreSQL version
 ```
