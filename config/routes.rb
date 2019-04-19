@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :ideas
   resources :jobs
+  resources :room_messages
+  resources :rooms
 
   root to: redirect('/pages/index')
 end

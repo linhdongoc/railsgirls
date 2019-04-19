@@ -1,6 +1,8 @@
 .header-container.grid-x.grid-margin-x
   .header-auth.cell.hide-for-small-only.small-12
-    = link_to current_user.email, edit_user_registration_path, class: 'user-email-link'
+    = link_to edit_user_registration_path do
+      = image_tag current_user.gravatar_url, class: 'avatar'
+      = current_user.username
     |&nbsp
     = link_to destroy_user_session_path, method: :delete do
       = image_tag 'icons/circle-arrow-logout.svg', class: 'logout-icon'
@@ -16,3 +18,5 @@
         = link_to 'Jobs', jobs_path
       li class="#{ menu_item_is_active_class(comments_path) }"
         = link_to 'Comments', comments_path
+      li class="#{ menu_item_is_active_class(rooms_path) }"
+        = link_to 'Rooms', rooms_path

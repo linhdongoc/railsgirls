@@ -1,0 +1,9 @@
+.grid-container
+  = breadcrumbs_tag [ link_to('Rooms', rooms_path), 'Room edit' ]
+
+  h1 Editing Room
+  = @room.name
+
+  = render 'form', room: @room
+  .clearfix
+    .button.hollow.float-right= link_to 'Back', rooms_path

@@ -1,0 +1,6 @@
+= link_to 'Create a room', new_room_path, class: 'button'
+- if @rooms.present?
+  - @rooms.each do |room|
+    = link_to room.name, room_path(room)
+- else
+  p The are no rooms
