@@ -1,0 +1,14 @@
+.grid-container
+  = breadcrumbs_tag [ 'Rooms' ]
+
+  h1 Listing rooms
+
+  .grid-x.grid-margin-x.grid-padding-x
+    .cell.small-12.medium-3.rooms-sidebar
+      = render partial: 'sidebar'
+
+    .cell.small-12.medium-9.chat
+      .grid-x.grid-margin-x.chat-messages
+        .cell.small-12
+          h4 Welcome to the Chat rooms!
+          p We need to talk.

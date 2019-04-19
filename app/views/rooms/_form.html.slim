@@ -1,0 +1,14 @@
+= form_with(model: room, local: true) do |form|
+  - if room.errors.any?
+    .grid-x
+      .cell.small-12#error_explanation
+        h2 #{pluralize(room.errors.count, "error")} prohibited this comment from being saved:
+        ul
+          - room.errors.full_messages.each do |message|
+            li= message
+  .grid-x
+    .cell.small-12.field
+      = form.label :name
+      = form.text_field :name, id: :room_name
+    .cell.actions
+      .button.hollow= form.submit

@@ -23,6 +23,7 @@ gem 'foundation-rails',                         '~> 6.5.3.0'
 gem 'autoprefixer-rails',                       '~> 9.5.0'
 gem 'slim',                                     '~> 4.0'
 gem 'font-awesome-rails',                       '~> 4.7.0.4'
+gem 'redis',                                    '~> 4.1.0'
 
 group :development, :test do
   gem 'capybara',                               '~> 3.16.1'
@@ -42,4 +43,5 @@ group :development do
   gem 'spring-watcher-listen',                  '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rb-readline',                            '~> 0.5.3'
 end

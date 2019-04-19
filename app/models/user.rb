@@ -25,4 +25,9 @@ class User < ApplicationRecord
     login = conditions.delete(:login)
     where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.strip.downcase}]).first
   end
+
+  def gravatar_url
+    gravatar_id = Digest::MD5::hexdigest(email).downcase
+    "https://gravatar.com/avatar/#{gravatar_id}.png"
+  end
 end
