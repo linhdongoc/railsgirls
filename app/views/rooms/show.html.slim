@@ -1,27 +1,29 @@
 .grid-container
-  = breadcrumbs_tag [ link_to('Rooms', rooms_path), "Room #{@room.name}" ]
+  = breadcrumbs_tag [ link_to('Rooms', rooms_path), @room.name ]
 
-  .grid-x
-    .cell.small-12.medium-3
-      = render partial: 'sidebar'
+  .grid-x.grid-margin-x.grid-padding-x
+    .cell.small-12.medium-3.rooms-sidebar
+      = render partial: 'sidebar', location: @rooms
     .cell.small-12.medium-9.chat data-channel-subscribe='room' data-room-id="#{@room.id}"
-      - @room_messages.each do |room_message|
-        .avatar
-          = image_tag room_message.user.gravatar_url
-        .message-content
-          = room_message.message
-        .message-date
-          = room_message.created_at
+      .grid-x.grid-margin-x.align-middle.chat-messages
+        - @room_messages.each do |room_message|
+          - if room_message.created_at != Time.now
+            .cell.small-12.text-right
+              = room_message.created_at.strftime("%a, %d.%m.%Y")
+          .cell.small-1.avatar
+            = image_tag room_message.user.gravatar_url
+          .cell.small-8.message-content
+            = room_message.message
+          .cell.small-3.message-date
+            = room_message.created_at.strftime("at %H:%M")
 
-    .cell.small-12.medium-3
-    .cell.small-12.medium-9
       = form_for(@room_message, remote: true) do |form|
-        .grid-x
-          .cell.small-12.field
+        .grid-x.chat-input-message
+          .cell.small-10.field
             = form.text_field :message
             = form.hidden_field :room_id
-          .cell.actions
-            .button.hollow= form.submit
+          .cell.small-2.actions
+            .button= form.submit 'Enter'
 
 .hide data-role="message-template"
   .avatar data-role="user-avatar"
