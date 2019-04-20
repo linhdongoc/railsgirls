@@ -1,0 +1,29 @@
+.grid-container
+  = breadcrumbs_tag [ 'Trello' ]
+
+  h1 Listing Trello Cards
+
+  .grid-x
+    .cell.small-12.table-scroll
+      table.hover
+        thead
+          tr
+            th Title
+            th Description
+            th Labels
+            th Checklists
+            th Print
+        tbody
+          - @cards.each do |card|
+            tr
+              td= link_to card[:title], card[:url]
+              td= card[:description]
+              td= card[:labels].join(', ')
+              td
+                - card[:checklists].each do |list|
+                  ul
+                    li= list[:name]
+                    li= "checked: #{list[:checked].join(', ')}"
+                    li= "unchecked: #{list[:unchecked].join(', ')}"
+
+              td= check_box("card", "print")
