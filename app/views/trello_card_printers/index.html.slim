@@ -21,9 +21,14 @@
               td= card[:labels].join(', ')
               td
                 - card[:checklists].each do |list|
-                  ul
+                  ul.checklists
                     li= list[:name]
-                    li= "checked: #{list[:checked].join(', ')}"
-                    li= "unchecked: #{list[:unchecked].join(', ')}"
-
+                    -if list[:checked].present?
+                      li
+                        = image_tag 'icons/checked.svg', class: 'img'
+                        = list[:checked].join(', ')
+                    -if list[:unchecked].present?
+                      li
+                        = image_tag 'icons/unchecked.svg', class: 'img'
+                        = list[:unchecked].join(', ')
               td= check_box("card", "print")
