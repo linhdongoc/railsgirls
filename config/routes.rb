@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/menu_card'
   get 'portfolios/download/:document', to: 'portfolios#download', as: 'portfolios_download'
+  get 'trello_card_printers/index'
+  put 'trello_card_printers/generate_pdfs', to: 'trello_card_printers#generate_pdfs', as: :trello_card_printers_generate_pdfs
 
   resources :portfolios
   resources :comments
