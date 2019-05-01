@@ -3,32 +3,35 @@
 
   h1 Listing Trello Cards
 
-  .grid-x
-    .cell.small-12.table-scroll
-      table.hover
-        thead
-          tr
-            th Title
-            th Description
-            th Labels
-            th Checklists
-            th Print
-        tbody
-          - @cards.each do |card|
+  = form_tag(trello_card_printers_generate_pdfs_path, method: :put) do
+    .grid-x
+      .cell.small-12
+        table.hover
+          thead
             tr
-              td= link_to card[:title], card[:url]
-              td= card[:description]
-              td= card[:labels].join(', ')
-              td
-                - card[:checklists].each do |list|
-                  ul.checklists
-                    li= list[:name]
-                    -if list[:checked].present?
-                      li
-                        = image_tag 'icons/checked.svg', class: 'img'
-                        = list[:checked].join(', ')
-                    -if list[:unchecked].present?
-                      li
-                        = image_tag 'icons/unchecked.svg', class: 'img'
-                        = list[:unchecked].join(', ')
-              td= check_box("card", "print")
+              th
+                = image_submit_tag 'icons/pdf.svg', alt: 'Generate PDFs'
+              th Title
+              th Description
+              th Labels
+              th Checklists
+
+          tbody
+            - @cards.each do |card|
+              tr
+                td= check_box_tag 'cards[]', card.to_json
+                td= link_to card[:title], card[:url]
+                td= card[:description]
+                td= card[:labels].join(', ')
+                td
+                  - card[:checklists].each do |list|
+                    ul.checklists
+                      li= list[:name]
+                      -if list[:checked].present?
+                        li
+                          = image_tag 'icons/checked.svg', class: 'img'
+                          = list[:checked].join(', ')
+                      -if list[:unchecked].present?
+                        li
+                          = image_tag 'icons/unchecked.svg', class: 'img'
+                          = list[:unchecked].join(', ')

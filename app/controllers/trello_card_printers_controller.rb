@@ -41,4 +41,17 @@ class TrelloCardPrintersController < ApplicationController
     end
     list
   end
+
+  def generate_pdfs
+    if params[:cards]
+      pdf = TrelloCardPrinterPdf.new(params[:cards])
+      send_data pdf.render,
+                filename: "trello_card_printers.pdf",
+                type: 'application/pdf',
+                disposition: 'inline'
+    else
+      redirect_to action: 'index'
+    end
+
+  end
 end
