@@ -1,4 +1,4 @@
-ruby '2.5.1'
+ruby '2.6.3'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -25,6 +25,7 @@ gem 'slim',                                     '~> 4.0'
 gem 'font-awesome-rails',                       '~> 4.7.0.4'
 gem 'redis',                                    '~> 4.1.0'
 gem 'prawn',                                    '~> 2.2'
+gem 'multimedia_paradise',                      '~> 1.0'
 
 group :development, :test do
   gem 'capybara',                               '~> 3.16.1'
