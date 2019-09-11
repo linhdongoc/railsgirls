@@ -9,7 +9,7 @@ end
 gem 'rails',                                    '~> 5.2.3'
 gem 'pg',                                       '~> 1.1.4'
 gem 'carrierwave',                              '~> 1.3.1'
-gem 'mini_magick',                              '~> 4.9.3'
+gem 'mini_magick',                              '~> 4.9.4'
 gem 'puma',                                     '~> 3.12.0'
 gem 'sassc-rails',                              '~> 2.1.0'
 gem 'uglifier',                                 '~> 4.1'
