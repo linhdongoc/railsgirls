@@ -6,7 +6,7 @@ Your cookbook to the world of web development
 
 ## Ruby version
 
-`2.6.3`
+`2.5.1`
 
 ## Rails version
 
