@@ -3,12 +3,14 @@
 
   h1 Listing ideas
 
+  br
+  .button.hollow= link_to 'New Idea', new_idea_path
+  .button.hollow= link_to 'Import Idea', import_ideas_path
+  .button.hollow= link_to 'Delete Ideas', mass_destroy_ideas_path, data: { confirm: 'Are you sure?' }
+
   .grid-x.grid-margin-x
     - @ideas.each do |idea|
       .cell.small-12.medium-4.large-3
         = image_tag idea.picture.url if idea.picture.present?
         h4= link_to idea.name, idea
         = idea.description
-
-  br
-  .button.hollow= link_to 'New Idea', new_idea_path

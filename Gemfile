@@ -25,6 +25,7 @@ gem 'slim',                                     '~> 4.0'
 gem 'font-awesome-rails',                       '~> 4.7.0.4'
 gem 'redis',                                    '~> 4.1.0'
 gem 'prawn',                                    '~> 2.2'
+gem 'sidekiq',                                  '~> 6.0.0'
 
 group :development, :test do
   gem 'capybara',                               '~> 3.16.1'
