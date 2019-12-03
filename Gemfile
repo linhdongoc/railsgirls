@@ -28,15 +28,9 @@ gem 'prawn',                                    '~> 2.2'
 gem 'sidekiq',                                  '~> 6.0.0'
 
 group :development, :test do
-  gem 'capybara',                               '~> 3.16.1'
-  gem 'rspec-rails',                            '~> 3.8.0'
-  gem 'rspec_junit_formatter',                  '~> 0.4.1'
-  gem 'database_cleaner',                       '~> 1.7'
-  gem 'shoulda-matchers',                       '~> 4.0.1'
   gem 'factory_bot_rails',                      '~> 5.0.1'
   gem 'faker',                                  '~> 1.9'
   gem 'byebug',                                                               platform: :mri
-  gem 'launchy',                                '~> 2.4.3'
 end
 
 group :development do
@@ -46,4 +40,13 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rb-readline',                            '~> 0.5.3'
+end
+
+group :test do
+  gem 'capybara',                               '~> 3.16.1'
+  gem 'rspec-rails',                            '~> 3.8.0'
+  gem 'rspec_junit_formatter',                  '~> 0.4.1'
+  gem 'database_cleaner',                       '~> 1.7'
+  gem 'shoulda-matchers',                       '~> 4.0.1'
+  gem 'launchy',                                '~> 2.4.3'
 end
