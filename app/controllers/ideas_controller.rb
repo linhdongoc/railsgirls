@@ -14,8 +14,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new
   end
 
-  def edit
-  end
+  def edit ;end
 
   def create
     @idea = Idea.new(idea_params)
@@ -71,6 +70,6 @@ class IdeasController < ApplicationController
   end
 
   def idea_params
-    params.require(:idea).permit(:name, :description, :picture)
+    params.require(:idea).permit(:title, :description, :data)
   end
 end

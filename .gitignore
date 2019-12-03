@@ -14,6 +14,7 @@
 !/tmp/.keep
 
 # Ignore Byebug command history file.
+/public/assets
 .byebug_history
 /.idea
 /.ruby-gemset
@@ -22,3 +23,7 @@
 
 # Ingnore Sample files
 /db/*.sample
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep

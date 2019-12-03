@@ -1,9 +1,7 @@
 class Idea < ApplicationRecord
-  mount_uploader :picture, ImageUploader
-
   has_many :comments
+  has_one_attached :data
 
-  validates :name, presence: true
-  validates :picture, file_size: { less_than_or_equal_to: 10.megabytes },
-            file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+  validates :title, presence: true
+  validates :data, file_size: { less_than_or_equal_to: 100.megabytes }
 end

@@ -15,7 +15,7 @@ describe Idea do
     end
 
     it 'is invalid without name' do
-      idea2 = build(:idea, name: nil)
+      idea2 = build(:idea, title: nil)
       expect(idea2).to_not be_valid
     end
 

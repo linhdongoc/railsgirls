@@ -2,9 +2,9 @@ FactoryBot.define do
 
   # idea factory without associated comments
   factory :idea do
-    name { Faker::Dessert.variety }
+    title { Faker::Dessert.variety }
     description { Faker::Lorem.paragraph }
-    picture { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/uploads/idea1.jpg'), 'image/jpeg') }
+    data { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/uploads/idea1.jpg'), 'image/jpeg') }
 
     # idea_with_comments will create comment data after the idea has been created
     factory :idea_with_comments do

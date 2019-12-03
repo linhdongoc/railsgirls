@@ -25,7 +25,7 @@ FactoryBot.define do
     street { Faker::Address.street_address }
     zip { Faker::Address.zip_code }
     place { Faker::Address.city }
-    birthday { Faker::Date.birthday(18, 65) }
+    birthday { Faker::Date.birthday(min_age: 18, max_age: 65) }
     phone { Faker::PhoneNumber.cell_phone }
     email { Faker::Internet.unique.safe_email }
     username { Faker::Internet.unique.username }

@@ -8,13 +8,13 @@
             li= message
   .grid-x
     .cell.small-12.field
-      = form.label :name
-      = form.text_field :name, id: :idea_name
+      = form.label :title
+      = form.text_field :title
     .cell.small-12.field
       = form.label :description
-      = form.text_area :description, id: :idea_description
+      = form.text_area :description
     .cell.small-12.field
-      = form.label :picture
-      = form.file_field :picture, id: :idea_picture
+      = form.label :data
+      = form.file_field :data
     .cell.actions
       .button.hollow= form.submit

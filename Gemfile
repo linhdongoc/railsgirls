@@ -30,8 +30,8 @@ gem 'prawn',                                    '~> 2.2'
 gem 'sidekiq',                                  '~> 6.0.0'
 
 group :development, :test do
-  gem 'factory_bot_rails',                      '~> 5.0.1'
-  gem 'faker',                                  '~> 1.9'
+  gem 'factory_bot_rails',                      '~> 5.1.1'
+  gem 'faker',                                  '~> 2.8.0'
   gem 'byebug',                                                               platform: :mri
 end
 

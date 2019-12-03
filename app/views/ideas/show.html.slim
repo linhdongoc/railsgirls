@@ -3,13 +3,13 @@
 
   .grid-x.grid-margin-x
     .cell.small-4
-      = image_tag(@idea.picture.url) if @idea.picture.present?
+      = image_tag "ideas/idea1.jpg"
     .cell.small-8
       .grid-x.grid-margin-x
         .cell.small-6
-          b Name:
+          b Title:
         .cell.small-6
-          = @idea.name
+          = @idea.title
         .cell.small-6
           b Description:
         .cell.small-6
@@ -18,6 +18,7 @@
           .button.hollow= link_to 'Edit', edit_idea_path(@idea)
           .button.hollow= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete
           .button.hollow= link_to 'Back', ideas_path
+          .button.hollow= link_to 'Download', rails_blob_path(@idea.data, disposition: "attachment")
         .cell.small-12
           h4 Comments
           - @comments.each do |comment|

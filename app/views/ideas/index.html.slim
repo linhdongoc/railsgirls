@@ -11,6 +11,5 @@
   .grid-x.grid-margin-x
     - @ideas.each do |idea|
       .cell.small-12.medium-4.large-3
-        = image_tag idea.picture.url if idea.picture.present?
-        h4= link_to idea.name, idea
-        = idea.description
+        = link_to (image_tag "ideas/idea1.jpg"), rails_blob_path(idea.data, disposition: "attachment")
+        = link_to idea.title, idea
