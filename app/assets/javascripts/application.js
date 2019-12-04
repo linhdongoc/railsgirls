@@ -17,6 +17,11 @@
 //= require_tree .
 
 //= require foundation
+
 $(document).on('turbolinks:load', function() {
     $(function(){ $(document).foundation(); });
+});
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
 });
