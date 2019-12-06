@@ -6,14 +6,23 @@
       = image_tag "ideas/idea1.jpg"
     .cell.small-8
       .grid-x.grid-margin-x
+        .cell.small-12
+          b Title
+          p= @idea.title
+        .cell.small-12
+          b Description
+          p= @idea.description.presence || 'n.a.'
         .cell.small-6
-          b Title:
         .cell.small-6
-          = @idea.title
-        .cell.small-6
-          b Description:
-        .cell.small-6
-          = @idea.description
+          .grid-x.idea-actions
+            .cell.small-4.action-icon= link_to (image_tag "icons/edit-regular.svg"), edit_idea_path(@idea),
+                    title: 'Bearbeiten', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+            .cell.small-4.action-icon= link_to (image_tag "icons/trash-alt-solid.svg"), @idea, data: {confirm: 'Are you sure?'}, method: :delete,
+                    title: 'Löschen', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+            .cell.small-4.action-icon= link_to (image_tag "icons/file-download-solid.svg"), rails_blob_path(@idea.data, disposition: "attachment"),
+                    title: 'Download', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+
+
         .cell.small-12.button-group
           .button.hollow= link_to 'Edit', edit_idea_path(@idea)
           .button.hollow= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete

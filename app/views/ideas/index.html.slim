@@ -2,9 +2,9 @@
   = breadcrumbs_tag [ 'Ideas' ]
 
   .grid-x.grid-margin-x
-    .cell.small-10
+    .cell.small-8.medium-9.large-10
       h2 Listing ideas
-    .cell.small-2
+    .cell.small-4.medium-3.large-2
       .grid-x.grid-padding-x
         .cell.small-4= link_to (image_tag "icons/plus-circle-solid.svg"), new_idea_path,
                 title: 'New Idea', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
@@ -14,26 +14,27 @@
                 title: 'Delete all ideas', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
 
   .grid-x.grid-margin-x
-    table
-      thead
-        tr
-          th= 'ID'
-          th= 'Title'
-          th= 'Content Type'
-          th= 'Datum'
-          th= 'Actions'
-      tbody
-        - @ideas.each do |idea|
+    .cell.small-12
+      table
+        thead
           tr
-            td= idea.id
-            td= idea.title
-            td= idea.data.content_type
-            td= idea.updated_at.strftime("%d.%m.%Y %H:%M")
-            td
-              .grid-x.idea-actions
-                .cell.small-4.action-icon= link_to (image_tag "icons/eye-regular.svg"), idea,
-                        title: 'Anzeigen', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
-                .cell.small-4.action-icon= link_to (image_tag "icons/file-download-solid.svg"), rails_blob_path(idea.data, disposition: "attachment"),
-                        title: 'Download', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
-                .cell.small-4.action-icon= link_to (image_tag "icons/trash-alt-solid.svg"), idea, data: { confirm: 'Are you sure?' }, method: :delete,
-                        title: 'Löschen', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+            th= 'ID'
+            th= 'Title'
+            th= 'Attachment'
+            th= 'Datum'
+            th= 'Actions'
+        tbody
+          - @ideas.each do |idea|
+            tr
+              td= idea.id
+              td= idea.title
+              td= idea.data.filename
+              td= idea.updated_at.strftime("%d.%m.%Y %H:%M")
+              td
+                .grid-x.idea-actions
+                  .cell.small-4.action-icon= link_to (image_tag "icons/eye-regular.svg"), idea,
+                          title: 'Anzeigen', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+                  .cell.small-4.action-icon= link_to (image_tag "icons/file-download-solid.svg"), rails_blob_path(idea.data, disposition: "attachment"),
+                          title: 'Download', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
+                  .cell.small-4.action-icon= link_to (image_tag "icons/trash-alt-solid.svg"), idea, data: { confirm: 'Are you sure?' }, method: :delete,
+                          title: 'Löschen', 'data-toggle' => 'tooltip', 'data-placement' => 'right'
