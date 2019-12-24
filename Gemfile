@@ -29,6 +29,7 @@ gem 'redis',                                    '~> 4.1.0'
 gem 'prawn',                                    '~> 2.2'
 gem 'sidekiq',                                  '~> 6.0.0'
 gem 'google-cloud-storage',                     '~> 1.24',                    require: false
+gem 'acts_as_paranoid',                         '~> 0.6.2'
 
 group :development, :test do
   gem 'factory_bot_rails',                      '~> 5.1.1'
