@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails',                                    '~> 5.2.3'
+gem 'rails',                                    '~> 5.2.4.3'
 gem 'pg',                                       '~> 1.1.4'
 gem 'carrierwave',                              '~> 2.0.2'
 gem 'carrierwave-i18n',                         '~> 0.2.0'
