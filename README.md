@@ -1,15 +1,19 @@
 # Rails Girls
 
-![CI](https://github.com/linhdongoc/railsgirls/workflows/CI/badge.svg)
+![Build CI](https://github.com/linhdongoc/railsgirls/workflows/Build%20CI/badge.svg?branch=master)
 [![Build Status](https://semaphoreci.com/api/v1/linhdongoc/railsgirls/branches/master/badge.svg)](https://semaphoreci.com/linhdongoc/railsgirls)
 
 Your cookbook to the world of web development
 
 ## System dependencies
 
+## rubygems-update
+
+`3.1.4`
+
 ## Ruby version
 
-`2.5.1`
+`2.5.0`
 
 ## Rails version
 
