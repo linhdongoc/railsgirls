@@ -20,9 +20,7 @@ jobs:
       postgres:
         image: postgres:11
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+          POSTGRES_HOST: localhost
         ports: ["5432:5432"]
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
@@ -55,19 +53,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Build App
-        env:
-          POSTGRES_HOST: localhost
-          POSTGRES_USER: postgres
-          RAILS_ENV: test
+      - name: Install dependencies
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-          bin/rails db:setup
 
       - name: Run Tests
-        env:
-          POSTGRES_HOST: localhost
-          POSTGRES_USER: postgres
-          RAILS_ENV: test
-        run: exec rspec
+        run: |
+          bundle exec rake db:prepare:test
+          bundle exec rspec
