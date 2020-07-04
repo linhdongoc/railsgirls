@@ -41,7 +41,7 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.5.0'
+          ruby-version: '2.5'
 
       - name: Install PostgreSQL 11 client
         run: sudo apt-get -yqq install libpq-dev
