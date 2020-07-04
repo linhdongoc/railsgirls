@@ -1,4 +1,7 @@
-# Rails Girls [![Build Status](https://semaphoreci.com/api/v1/linhdongoc/railsgirls/branches/master/badge.svg)](https://semaphoreci.com/linhdongoc/railsgirls)
+# Rails Girls
+
+![CI](https://github.com/linhdongoc/railsgirls/workflows/CI/badge.svg)
+[![Build Status](https://semaphoreci.com/api/v1/linhdongoc/railsgirls/branches/master/badge.svg)](https://semaphoreci.com/linhdongoc/railsgirls)
 
 Your cookbook to the world of web development
 
